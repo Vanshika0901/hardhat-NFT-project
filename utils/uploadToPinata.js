@@ -1,6 +1,7 @@
 const pinataSdk = require("@pinata/sdk");
 const path = require("path");
-const { fs } = require("fs");
+const fs = require("fs");
+require("dotenv").config();
 
 const pinataApiKey = process.env.PINATA_API_KEY;
 const pinataSecretKey = process.env.PINATA_SECRET_KEY;
@@ -12,7 +13,7 @@ async function storeImages(imagesFilePath) {
   let responses = [];
   for (fileIndex in files) {
     const readableStreamForFile = fs.createReadStream(
-      `${fullImagesPath}/${files[fileIndex]}`
+      `${fullFilePath}/${files[fileIndex]}`
     );
     try {
       const response = await pinata.pinFileToIPFS(readableStreamForFile);
