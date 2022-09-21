@@ -1,7 +1,7 @@
 const { network, ethers } = require("hardhat");
 const { deploymentChains, networkConfig } = require("../helper-hardhat-config");
 const { verify } = require("../utils/verify");
-const storeImages = require("../utils/uploadToPinata");
+const { storeImages } = require("../utils/uploadToPinata");
 
 const imageLocation = "./images/random";
 
